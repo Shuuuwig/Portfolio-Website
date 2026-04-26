@@ -25,86 +25,93 @@
     .fade-up-2 { animation: fadeUp 0.6s ease 0.15s both; }
     .fade-up-3 { animation: fadeUp 0.6s ease 0.3s both; }
   </style>
-  <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full" style="background-color:#0B1D3A;">
-  <div id="app" class="w-full h-full overflow-auto" style="background-color:#0B1D3A;"><!-- HEADER -->
+  <div id="app" class="w-full h-full overflow-auto" style="background-color:#0B1D3A;">
+   
    <header class="w-full py-10 px-6 md:px-16 fade-up" style="border-bottom: 2px solid #F97316;">
     <h1 id="el-title" class="text-3xl md:text-5xl font-800 tracking-tight text-white">Adam Ludwig — Game Designer</h1>
-   </header><!-- PORTRAIT -->
-   <section class="w-full px-6 md:px-16 py-8 fade-up-1">
-    <div class="flex justify-center">
-     <div class="w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden" style="background-color:#122750; border: 2px solid #F97316;"><img id="el-portrait" src="https://via.placeholder.com/400x400?text=Your+Photo" alt="Portrait" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#F97316'; this.style.opacity='0.1';">
-     </div>
+   </header>
+
+   <section class="w-full px-6 md:px-16 py-12 flex flex-col md:flex-row gap-10 fade-up-2">
+    
+    <div class="flex-shrink-0">
+      <div class="w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden" style="background-color:#122750; border: 2px solid #F97316;">
+        <img id="el-portrait" src="https://via.placeholder.com/400x400?text=Your+Photo" alt="Portrait" loading="lazy" class="w-full h-full object-cover">
+      </div>
     </div>
-   </section><!-- BIO + CONTACT -->
-   <section class="w-full px-6 md:px-16 py-12 flex flex-col md:flex-row gap-10 fade-up-2"><!-- Bio -->
+
     <div class="flex-1">
      <h2 class="text-sm font-600 uppercase tracking-widest mb-4" style="color:#F97316;">About</h2>
-     <p id="el-bio" class="text-lg leading-relaxed text-white/80 max-w-xl">Passionate game designer with a focus on narrative-driven experiences and emergent gameplay systems. Skilled in level design, systems balancing, and rapid prototyping. Always looking for new ways to surprise and delight players.</p>
-    </div><!-- Contact -->
-    <div class="w-full md:w-64 flex-shrink-0 rounded-xl p-6" style="background-color:#122750;">
+     <p id="el-bio" class="text-lg leading-relaxed text-white/80 max-w-xl">
+       Passionate game designer with a focus on narrative-driven experiences and emergent gameplay systems. Skilled in level design, systems balancing, and rapid prototyping.
+     </p>
+    </div>
+
+    <div class="h-fit w-fit min-w-[240px] flex-shrink-0 rounded-xl p-6" style="background-color:#122750;">
      <h2 class="text-sm font-600 uppercase tracking-widest mb-5" style="color:#F97316;">Contact</h2>
      <div class="space-y-4 text-white/80 text-sm">
-      <div class="flex items-center gap-3"><i data-lucide="mail" style="color:#F97316; width:18px; height:18px;"></i> <span id="el-email">adamludwig_GD@gmail.com</span>
+      <div class="flex items-center gap-3">
+        <i data-lucide="mail" style="color:#F97316; width:18px; height:18px;"></i> 
+        <span id="el-email">adamludwig_GD@gmail.com</span>
       </div>
-      <div class="flex items-center gap-3"><i data-lucide="linkedin" style="color:#F97316; width:18px; height:18px;"></i> <span>Adam Ludwig</span>
-      </div>
-     </div>
-    </div>
-   </section><!-- PROJECTS -->
-   <section class="w-full px-6 md:px-16 py-12 fade-up-3">
-    <h2 class="text-sm font-600 uppercase tracking-widest mb-8" style="color:#F97316;">Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><!-- Project 1 -->
-     <div class="project-card rounded-xl overflow-hidden" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:200px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="film" style="width:28px;height:28px;"></i> Video / GIF </span>
-      </div>
-      <div class="p-5">
-       <h3 id="el-p1-title" class="text-lg font-700 text-white mb-2">Project Alpha</h3>
-       <p id="el-p1-desc" class="text-sm text-white/60 leading-relaxed">A fast-paced roguelite with procedural level generation and deep combat mechanics.</p>
-      </div>
-     </div><!-- Project 2 -->
-     <div class="project-card rounded-xl overflow-hidden" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:200px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="film" style="width:28px;height:28px;"></i> Video / GIF </span>
-      </div>
-      <div class="p-5">
-       <h3 id="el-p2-title" class="text-lg font-700 text-white mb-2">Project Beta</h3>
-       <p id="el-p2-desc" class="text-sm text-white/60 leading-relaxed">A narrative puzzle game exploring themes of memory and identity through environmental storytelling.</p>
-      </div>
-     </div><!-- Project 3 -->
-     <div class="project-card rounded-xl overflow-hidden" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:200px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="film" style="width:28px;height:28px;"></i> Video / GIF </span>
-      </div>
-      <div class="p-5">
-       <h3 id="el-p3-title" class="text-lg font-700 text-white mb-2">Project Gamma</h3>
-       <p id="el-p3-desc" class="text-sm text-white/60 leading-relaxed">A cooperative multiplayer experience built around emergent social dynamics and player-driven economies.</p>
+      <div class="flex items-center gap-3">
+        <i data-lucide="linkedin" style="color:#F97316; width:18px; height:18px;"></i> 
+        <span>Adam Ludwig</span>
       </div>
      </div>
     </div>
    </section>
+
+   <section class="w-full px-6 md:px-16 py-12 fade-up-3">
+    <h2 class="text-sm font-600 uppercase tracking-widest mb-8" style="color:#F97316;">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <div class="project-card rounded-xl overflow-hidden" style="background-color:#122750;">
+      <div class="media-slot w-full" style="height:200px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="film" style="width:28px;height:28px;"></i> Video / GIF </span></div>
+      <div class="p-5">
+       <h3 id="el-p1-title" class="text-lg font-700 text-white mb-2">Project Alpha</h3>
+       <p id="el-p1-desc" class="text-sm text-white/60 leading-relaxed">A fast-paced roguelite with procedural level generation and deep combat mechanics.</p>
+      </div>
+     </div>
+     <div class="project-card rounded-xl overflow-hidden" style="background-color:#122750;">
+      <div class="media-slot w-full" style="height:200px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="film" style="width:28px;height:28px;"></i> Video / GIF </span></div>
+      <div class="p-5">
+       <h3 id="el-p2-title" class="text-lg font-700 text-white mb-2">Project Beta</h3>
+       <p id="el-p2-desc" class="text-sm text-white/60 leading-relaxed">A narrative puzzle game exploring themes of memory and identity.</p>
+      </div>
+     </div>
+     <div class="project-card rounded-xl overflow-hidden" style="background-color:#122750;">
+      <div class="media-slot w-full" style="height:200px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="film" style="width:28px;height:28px;"></i> Video / GIF </span></div>
+      <div class="p-5">
+       <h3 id="el-p3-title" class="text-lg font-700 text-white mb-2">Project Gamma</h3>
+       <p id="el-p3-desc" class="text-sm text-white/60 leading-relaxed">A cooperative experience built around player-driven economies.</p>
+      </div>
+     </div>
+    </div>
+   </section>
+
    <div class="w-full px-6 md:px-16 py-6 text-center text-white/20 text-xs">
-    © 2025 — All rights reserved
+    © 2026 — All rights reserved
    </div>
   </div>
+
   <script>
   const defaultConfig = {
     site_title: "Shah Adam Ludwig — Game Designer",
     portrait_url: "https://via.placeholder.com/400x400?text=Your+Photo",
-    bio_text: "I'm Shah Adam Ludwig, a Game Designer dedicated to crafting in-depth systems, feel good combat experiences and enjoyable levels to play through. With a deep technical foundation in Unity and C#, I transform design ideas into functional prototypes and full games. My approach focuses on mechanical depth and player feedback, ensuring that every level I build and every system I design feels responsive, balanced, and impactful.",
+    bio_text: "I'm Shah Adam Ludwig, a Game Designer dedicated to crafting in-depth systems, feel-good combat experiences and enjoyable levels. With a technical foundation in Unity and C#, I focus on mechanical depth and player feedback.",
     contact_email: "adamludwig_GD@gmail.com",
-    contact_location: "City, Country",
-    project_1_title: "Project Alpha",
-    project_1_desc: "A fast-paced roguelite with procedural level generation and deep combat mechanics.",
-    project_2_title: "Project Beta",
-    project_2_desc: "A narrative puzzle game exploring themes of memory and identity through environmental storytelling.",
-    project_3_title: "Project Gamma",
-    project_3_desc: "A cooperative multiplayer experience built around emergent social dynamics and player-driven economies.",
+    project_1_title: "Turn Based RPG",
+    project_1_desc: "A dungeon crawler turn-based game implemented in Unity.",
+    project_2_title: "Puzzle Platformer",
+    project_2_desc: "A platformer where boomerangs shape the environment.",
+    project_3_title: "Economic Sim",
+    project_3_desc: "A complex resource management system with exponential scaling.",
     background_color: "#0B1D3A",
     accent_color: "#F97316",
     card_color: "#122750",
     text_color: "#FFFFFF",
-    muted_text_color: "#FFFFFF",
     font_family: "Outfit",
     font_size: 16
   };
@@ -115,7 +122,6 @@
     document.getElementById('el-portrait').src = g('portrait_url');
     document.getElementById('el-bio').textContent = g('bio_text');
     document.getElementById('el-email').textContent = g('contact_email');
-    document.getElementById('el-location').textContent = g('contact_location');
     document.getElementById('el-p1-title').textContent = g('project_1_title');
     document.getElementById('el-p1-desc').textContent = g('project_1_desc');
     document.getElementById('el-p2-title').textContent = g('project_2_title');
@@ -123,64 +129,20 @@
     document.getElementById('el-p3-title').textContent = g('project_3_title');
     document.getElementById('el-p3-desc').textContent = g('project_3_desc');
 
-    const bg = g('background_color');
     const accent = g('accent_color');
-    const card = g('card_color');
     const txt = g('text_color');
-    const font = g('font_family');
-    const size = g('font_size');
-
-    document.body.style.backgroundColor = bg;
-    document.getElementById('app').style.backgroundColor = bg;
-    document.querySelector('header').style.borderBottomColor = accent;
-
+    
     document.querySelectorAll('[style*="color:#F97316"]').forEach(el => el.style.color = accent);
-    document.querySelectorAll('.project-card, [style*="background-color:#122750"]').forEach(el => el.style.backgroundColor = card);
-    document.querySelectorAll('.media-slot').forEach(el => { el.style.borderColor = txt + '26'; });
-
     document.querySelectorAll('h1, h3, .text-white').forEach(el => el.style.color = txt);
-    document.querySelectorAll('.text-white\\/80, .text-white\\/60, .text-white\\/25, .text-white\\/20').forEach(el => el.style.color = txt + '99');
-
-    document.querySelectorAll('*').forEach(el => el.style.fontFamily = `${font}, sans-serif`);
-    document.getElementById('el-bio').style.fontSize = `${size * 1.125}px`;
-    document.getElementById('el-title').style.fontSize = `${size * 3}px`;
+    document.querySelectorAll('.text-white\\/80').forEach(el => el.style.color = txt + '99');
   }
 
   window.elementSdk.init({
     defaultConfig,
     onConfigChange: async (config) => applyConfig(config),
-    mapToCapabilities: (config) => {
-      const g = (k) => config[k] || defaultConfig[k];
-      const mut = (key) => ({
-        get: () => g(key),
-        set: (v) => { config[key] = v; window.elementSdk.setConfig({ [key]: v }); }
-      });
-      return {
-        recolorables: [mut('background_color'), mut('card_color'), mut('text_color'), mut('accent_color'), mut('muted_text_color')],
-        borderables: [],
-        fontEditable: mut('font_family'),
-        fontSizeable: mut('font_size')
-      };
-    },
-    mapToEditPanelValues: (config) => {
-      const g = (k) => config[k] || defaultConfig[k];
-      return new Map([
-        ["site_title", g("site_title")],
-        ["portrait_url", g("portrait_url")],
-        ["bio_text", g("bio_text")],
-        ["contact_email", g("contact_email")],
-        ["contact_location", g("contact_location")],
-        ["project_1_title", g("project_1_title")],
-        ["project_1_desc", g("project_1_desc")],
-        ["project_2_title", g("project_2_title")],
-        ["project_2_desc", g("project_2_desc")],
-        ["project_3_title", g("project_3_title")],
-        ["project_3_desc", g("project_3_desc")]
-      ]);
-    }
   });
 
   lucide.createIcons();
-</script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f2819d6e30e252a',t:'MTc3NzIzMjg2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </script>
+ </body>
 </html>
