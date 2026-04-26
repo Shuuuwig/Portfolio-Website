@@ -9,279 +9,12 @@
   <script src="/_sdk/element_sdk.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <style>
-    /* This makes the jump feel like a smooth glide instead of a teleport */
     html { scroll-behavior: smooth; }
-    
     * { font-family: 'Outfit', sans-serif; }
-    .media-slot {
-      border: 2px dashed rgba(255,255,255,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.3s;
-    }
-    .media-slot:hover { border-color: #F97316; }
+    
     .project-card { transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
     .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-    .fade-up { animation: fadeUp 0.6s ease both; }
-    .fade-up-2 { animation: fadeUp 0.6s ease 0.15s both; }
-    .fade-up-3 { animation: fadeUp 0.6s ease 0.3s both; }
-  </style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full" style="background-color:#0B1D3A;">
-  <div id="app" class="w-full h-full overflow-auto" style="background-color:#0B1D3A;">
-   
-   <header class="w-full py-10 px-6 md:px-16 fade-up" style="border-bottom: 2px solid #F97316;">
-    <h1 id="el-title" class="text-3xl md:text-5xl font-800 tracking-tight text-white">Shah Adam Ludwig — Game Designer</h1>
-   </header>
-
-   <section class="w-full px-6 md:px-16 py-12 flex flex-col md:flex-row gap-10 fade-up-2">
-    <div class="flex-shrink-0">
-      <div class="w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden" style="background-color:#122750; border: 2px solid #F97316;">
-        <img id="el-portrait" src="https://via.placeholder.com/400x400?text=Your+Photo" alt="Portrait" loading="lazy" class="w-full h-full object-cover">
-      </div>
-    </div>
-    <div class="flex-1">
-     <h2 class="text-sm font-600 uppercase tracking-widest mb-4" style="color:#F97316;">About</h2>
-     <p id="el-bio" class="text-lg leading-relaxed text-white/80 max-w-xl">
-       I’m a Game Designer dedicated to crafting immersive systems and combat experiences. With a deep technical foundation in Unity and C#, I transform design theories into playable reality.
-     </p>
-    </div>
-    <div class="h-fit w-fit min-w-[240px] flex-shrink-0 rounded-xl p-6" style="background-color:#122750;">
-     <h2 class="text-sm font-600 uppercase tracking-widest mb-5" style="color:#F97316;">Contact</h2>
-     <div class="space-y-4 text-white/80 text-sm">
-      <div class="flex items-center gap-3"><i data-lucide="mail" style="color:#F97316; width:18px; height:18px;"></i> <span id="el-email">adamludwig_GD@gmail.com</span></div>
-      <div class="flex items-center gap-3"><i data-lucide="linkedin" style="color:#F97316; width:18px; height:18px;"></i> <span>Shah Adam Ludwig</span></div>
-     </div>
-    </div>
-   </section>
-
-   <section class="w-full px-6 md:px-16 py-12 fade-up-3">
-    <h2 class="text-sm font-600 uppercase tracking-widest mb-8" style="color:#F97316;">Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-     
-     <a href="#project-1" class="project-card rounded-xl overflow-hidden block" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:250px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="arrow-down" style="width:28px;height:28px;"></i> View Details </span></div>
-      <div class="p-5">
-       <h3 class="text-lg font-700 text-white mb-2">Turn Based RPG</h3>
-       <p class="text-sm text-white/60 leading-relaxed">Technical breakdown of my C# combat systems and mechanical balance.</p>
-      </div>
-     </a>
-
-     <a href="#project-2" class="project-card rounded-xl overflow-hidden block" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:250px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="arrow-down" style="width:28px;height:28px;"></i> View Details </span></div>
-      <div class="p-5">
-       <h3 class="text-lg font-700 text-white mb-2">Puzzle Platformer</h3>
-       <p class="text-sm text-white/60 leading-relaxed">Analysis of custom physics logic and 3D asset pipeline implementation.</p>
-      </div>
-     </a>
-
-    </div>
-   </section>
-
-   <section class="w-full px-6 md:px-16 py-20 space-y-32">
-     
-     <div id="project-1" class="pt-16" style="scroll-margin-top: 50px;">
-       <div class="flex flex-col md:flex-row gap-12 border-t border-white/10 pt-16">
-         <div class="md:w-1/2">
-           <h2 class="text-3xl font-800 text-white mb-4">Turn Based RPG — Technical Analysis</h2>
-           <p class="text-white/70 mb-6 italic">Unity / C# / Game Design</p>
-           <ul class="space-y-4 text-white/80">
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Built a modular combat engine using <strong>C# ScriptableObjects</strong> for scalable enemy data.</li>
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Implemented <strong>Perlin Noise</strong> for dynamic camera shake to enhance mechanical feedback.</li>
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Balanced resource economies using exponential rate-of-change models in <strong>Desmos</strong>.</li>
-           </ul>
-         </div>
-         <div class="md:w-1/2 aspect-video rounded-xl flex items-center justify-center" style="background-color:#122750; border: 2px solid #F97316;">
-           <span class="text-white/30 text-sm">Add Screenshot or GIF here</span>
-         </div>
-       </div>
-     </div>
-
-     <div id="project-2" class="pt-16" style="scroll-margin-top: 50px;">
-       <div class="flex flex-col md:flex-row gap-12 border-t border-white/10 pt-16">
-         <div class="md:w-1/2">
-           <h2 class="text-3xl font-800 text-white mb-4">Puzzle Platformer — Pipeline & Physics</h2>
-           <p class="text-white/70 mb-6 italic">Unity / Maya / ZBrush</p>
-           <ul class="space-y-4 text-white/80">
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Architected custom boomerang flight physics using vector math in Unity.</li>
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Optimized high-poly <strong>ZBrush</strong> sculpts into game-ready <strong>Maya</strong> assets.</li>
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Designed environmental puzzles focused on player movement and timing.</li>
-           </ul>
-         </div>
-         <div class="md:w-1/2 aspect-video rounded-xl flex items-center justify-center" style="background-color:#122750; border: 2px solid #F97316;">
-           <span class="text-white/30 text-sm">Add Screenshot or GIF here</span>
-         </div>
-       </div>
-     </div>
-
-   </section>
-
-   <div class="w-full px-6 md:px-16 py-6 text-center text-white/20 text-xs">
-    © 2026 — All rights reserved
-   </div>
-  </div>
-
-  <script>
-    // Lucide makes the icons work
-    lucide.createIcons();
-  </script>
- </body>
-</html><!doctype html>
-<html lang="en" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shah Adam Ludwig | Game Designer Portfolio</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <style>
-    /* This makes the jump feel like a smooth glide instead of a teleport */
-    html { scroll-behavior: smooth; }
     
-    * { font-family: 'Outfit', sans-serif; }
-    .media-slot {
-      border: 2px dashed rgba(255,255,255,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.3s;
-    }
-    .media-slot:hover { border-color: #F97316; }
-    .project-card { transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
-    .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-    .fade-up { animation: fadeUp 0.6s ease both; }
-    .fade-up-2 { animation: fadeUp 0.6s ease 0.15s both; }
-    .fade-up-3 { animation: fadeUp 0.6s ease 0.3s both; }
-  </style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full" style="background-color:#0B1D3A;">
-  <div id="app" class="w-full h-full overflow-auto" style="background-color:#0B1D3A;">
-   
-   <header class="w-full py-10 px-6 md:px-16 fade-up" style="border-bottom: 2px solid #F97316;">
-    <h1 id="el-title" class="text-3xl md:text-5xl font-800 tracking-tight text-white">Shah Adam Ludwig — Game Designer</h1>
-   </header>
-
-   <section class="w-full px-6 md:px-16 py-12 flex flex-col md:flex-row gap-10 fade-up-2">
-    <div class="flex-shrink-0">
-      <div class="w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden" style="background-color:#122750; border: 2px solid #F97316;">
-        <img id="el-portrait" src="https://via.placeholder.com/400x400?text=Your+Photo" alt="Portrait" loading="lazy" class="w-full h-full object-cover">
-      </div>
-    </div>
-    <div class="flex-1">
-     <h2 class="text-sm font-600 uppercase tracking-widest mb-4" style="color:#F97316;">About</h2>
-     <p id="el-bio" class="text-lg leading-relaxed text-white/80 max-w-xl">
-       I’m a Game Designer dedicated to crafting immersive systems and combat experiences. With a deep technical foundation in Unity and C#, I transform design theories into playable reality.
-     </p>
-    </div>
-    <div class="h-fit w-fit min-w-[240px] flex-shrink-0 rounded-xl p-6" style="background-color:#122750;">
-     <h2 class="text-sm font-600 uppercase tracking-widest mb-5" style="color:#F97316;">Contact</h2>
-     <div class="space-y-4 text-white/80 text-sm">
-      <div class="flex items-center gap-3"><i data-lucide="mail" style="color:#F97316; width:18px; height:18px;"></i> <span id="el-email">adamludwig_GD@gmail.com</span></div>
-      <div class="flex items-center gap-3"><i data-lucide="linkedin" style="color:#F97316; width:18px; height:18px;"></i> <span>Shah Adam Ludwig</span></div>
-     </div>
-    </div>
-   </section>
-
-   <section class="w-full px-6 md:px-16 py-12 fade-up-3">
-    <h2 class="text-sm font-600 uppercase tracking-widest mb-8" style="color:#F97316;">Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-     
-     <a href="#project-1" class="project-card rounded-xl overflow-hidden block" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:250px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="arrow-down" style="width:28px;height:28px;"></i> View Details </span></div>
-      <div class="p-5">
-       <h3 class="text-lg font-700 text-white mb-2">Turn Based RPG</h3>
-       <p class="text-sm text-white/60 leading-relaxed">Technical breakdown of my C# combat systems and mechanical balance.</p>
-      </div>
-     </a>
-
-     <a href="#project-2" class="project-card rounded-xl overflow-hidden block" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:250px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="arrow-down" style="width:28px;height:28px;"></i> View Details </span></div>
-      <div class="p-5">
-       <h3 class="text-lg font-700 text-white mb-2">Puzzle Platformer</h3>
-       <p class="text-sm text-white/60 leading-relaxed">Analysis of custom physics logic and 3D asset pipeline implementation.</p>
-      </div>
-     </a>
-
-    </div>
-   </section>
-
-   <section class="w-full px-6 md:px-16 py-20 space-y-32">
-     
-     <div id="project-1" class="pt-16" style="scroll-margin-top: 50px;">
-       <div class="flex flex-col md:flex-row gap-12 border-t border-white/10 pt-16">
-         <div class="md:w-1/2">
-           <h2 class="text-3xl font-800 text-white mb-4">Turn Based RPG — Technical Analysis</h2>
-           <p class="text-white/70 mb-6 italic">Unity / C# / Game Design</p>
-           <ul class="space-y-4 text-white/80">
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Built a modular combat engine using <strong>C# ScriptableObjects</strong> for scalable enemy data.</li>
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Implemented <strong>Perlin Noise</strong> for dynamic camera shake to enhance mechanical feedback.</li>
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Balanced resource economies using exponential rate-of-change models in <strong>Desmos</strong>.</li>
-           </ul>
-         </div>
-         <div class="md:w-1/2 aspect-video rounded-xl flex items-center justify-center" style="background-color:#122750; border: 2px solid #F97316;">
-           <span class="text-white/30 text-sm">Add Screenshot or GIF here</span>
-         </div>
-       </div>
-     </div>
-
-     <div id="project-2" class="pt-16" style="scroll-margin-top: 50px;">
-       <div class="flex flex-col md:flex-row gap-12 border-t border-white/10 pt-16">
-         <div class="md:w-1/2">
-           <h2 class="text-3xl font-800 text-white mb-4">Puzzle Platformer — Pipeline & Physics</h2>
-           <p class="text-white/70 mb-6 italic">Unity / Maya / ZBrush</p>
-           <ul class="space-y-4 text-white/80">
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Architected custom boomerang flight physics using vector math in Unity.</li>
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Optimized high-poly <strong>ZBrush</strong> sculpts into game-ready <strong>Maya</strong> assets.</li>
-             <li class="flex gap-2"><span style="color:#F97316;">•</span> Designed environmental puzzles focused on player movement and timing.</li>
-           </ul>
-         </div>
-         <div class="md:w-1/2 aspect-video rounded-xl flex items-center justify-center" style="background-color:#122750; border: 2px solid #F97316;">
-           <span class="text-white/30 text-sm">Add Screenshot or GIF here</span>
-         </div>
-       </div>
-     </div>
-
-   </section>
-
-   <div class="w-full px-6 md:px-16 py-6 text-center text-white/20 text-xs">
-    © 2026 — All rights reserved
-   </div>
-  </div>
-
-  <script>
-    // Lucide makes the icons work
-    lucide.createIcons();
-  </script>
- </body>
-</html><!doctype html>
-<html lang="en" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shah Adam Ludwig | Game Designer Portfolio</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <style>
-    * { font-family: 'Outfit', sans-serif; }
-    .media-slot {
-      border: 2px dashed rgba(255,255,255,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.3s;
-    }
-    .media-slot:hover { border-color: #F97316; }
-    .project-card { transition: transform 0.3s, box-shadow 0.3s; }
-    .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
     @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
     .fade-up { animation: fadeUp 0.6s ease both; }
     .fade-up-2 { animation: fadeUp 0.6s ease 0.15s both; }
@@ -307,7 +40,7 @@
     <div class="flex-1">
      <h2 class="text-sm font-600 uppercase tracking-widest mb-4" style="color:#F97316;">About</h2>
      <p id="el-bio" class="text-lg leading-relaxed text-white/80 max-w-xl">
-       I’m a Game Designer dedicated to crafting immersive systems and combat experiences. With a deep technical foundation in Unity and C#, I transform design theories into playable reality. My approach focuses on mechanical depth and player feedback, ensuring that every level I build and every system I design feels responsive and impactful.
+       Passionate game designer with a focus on narrative-driven experiences and emergent gameplay systems. Skilled in level design, systems balancing, and rapid prototyping.
      </p>
     </div>
 
@@ -329,21 +62,68 @@
    <section class="w-full px-6 md:px-16 py-12 fade-up-3">
     <h2 class="text-sm font-600 uppercase tracking-widest mb-8" style="color:#F97316;">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-     <div class="project-card rounded-xl overflow-hidden" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:250px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="film" style="width:28px;height:28px;"></i> Video / GIF </span></div>
-      <div class="p-5">
-       <h3 id="el-p1-title" class="text-lg font-700 text-white mb-2">Turn Based RPG</h3>
-       <p id="el-p1-desc" class="text-sm text-white/60 leading-relaxed">A dungeon crawler turn-based game with randomized encounters.</p>
+     
+     <a href="#project-1" class="project-card rounded-xl overflow-hidden flex flex-col" style="background-color:#122750;">
+      <div class="p-6 pb-4">
+       <h3 class="text-xl font-700 text-white mb-2">Turn Based RPG</h3>
+       <p class="text-sm text-white/60 leading-relaxed">A dungeon crawler turn-based game with randomized encounters.</p>
       </div>
-     </div>
-     <div class="project-card rounded-xl overflow-hidden" style="background-color:#122750;">
-      <div class="media-slot w-full" style="height:250px; background:#0a1a35;"><span class="text-white/25 text-sm flex flex-col items-center gap-2"> <i data-lucide="film" style="width:28px;height:28px;"></i> Video / GIF </span></div>
-      <div class="p-5">
-       <h3 id="el-p2-title" class="text-lg font-700 text-white mb-2">Puzzle Platformer</h3>
-       <p id="el-p2-desc" class="text-sm text-white/60 leading-relaxed">A platformer where boomerangs are key to shaping the level in your facour.</p>
+      <div class="mt-auto px-6 py-3 flex items-center justify-between bg-black/20 border-t border-white/5 group">
+        <span class="text-xs font-600 uppercase tracking-wider text-white/40 group-hover:text-[#F97316] transition-colors">Details</span>
+        <i data-lucide="arrow-right" class="transition-transform group-hover:translate-x-1" style="color:#F97316; width:18px; height:18px;"></i>
       </div>
-     </div>
+     </a>
+
+     <a href="#project-2" class="project-card rounded-xl overflow-hidden flex flex-col" style="background-color:#122750;">
+      <div class="p-6 pb-4">
+       <h3 class="text-xl font-700 text-white mb-2">Puzzle Platformer</h3>
+       <p class="text-sm text-white/60 leading-relaxed">A platformer where boomerangs are key to shaping the level in your facour.</p>
+      </div>
+      <div class="mt-auto px-6 py-3 flex items-center justify-between bg-black/20 border-t border-white/5 group">
+        <span class="text-xs font-600 uppercase tracking-wider text-white/40 group-hover:text-[#F97316] transition-colors">Details</span>
+        <i data-lucide="arrow-right" class="transition-transform group-hover:translate-x-1" style="color:#F97316; width:18px; height:18px;"></i>
+      </div>
+     </a>
+
     </div>
+   </section>
+
+   <section class="w-full px-6 md:px-16 py-20 space-y-32">
+     
+     <div id="project-1" class="pt-16" style="scroll-margin-top: 50px;">
+       <div class="flex flex-col md:flex-row gap-12 border-t border-white/10 pt-16">
+         <div class="md:w-1/2">
+           <h2 class="text-3xl font-800 text-white mb-4">Turn Based RPG — Technical Breakdown</h2>
+           <p class="text-white/70 mb-6 italic">Unity / C# / Game Design</p>
+           <ul class="space-y-4 text-white/80">
+             <li class="flex gap-2"><span style="color:#F97316;">•</span> Detail point 1: Explain your combat system here.</li>
+             <li class="flex gap-2"><span style="color:#F97316;">•</span> Detail point 2: Explain your technical implementation.</li>
+             <li class="flex gap-2"><span style="color:#F97316;">•</span> Detail point 3: Mention the player feedback/feel.</li>
+           </ul>
+         </div>
+         <div class="md:w-1/2 aspect-video rounded-xl flex items-center justify-center" style="background-color:#122750; border: 2px solid #F97316;">
+           <span class="text-white/30 text-sm">Project 1 Media Placeholder</span>
+         </div>
+       </div>
+     </div>
+
+     <div id="project-2" class="pt-16" style="scroll-margin-top: 50px;">
+       <div class="flex flex-col md:flex-row gap-12 border-t border-white/10 pt-16">
+         <div class="md:w-1/2">
+           <h2 class="text-3xl font-800 text-white mb-4">Puzzle Platformer — System Analysis</h2>
+           <p class="text-white/70 mb-6 italic">Unity / Maya / C#</p>
+           <ul class="space-y-4 text-white/80">
+             <li class="flex gap-2"><span style="color:#F97316;">•</span> Detail point 1: Explain the boomerang mechanics.</li>
+             <li class="flex gap-2"><span style="color:#F97316;">•</span> Detail point 2: Describe the level design challenges.</li>
+             <li class="flex gap-2"><span style="color:#F97316;">•</span> Detail point 3: Talk about your asset pipeline from Maya.</li>
+           </ul>
+         </div>
+         <div class="md:w-1/2 aspect-video rounded-xl flex items-center justify-center" style="background-color:#122750; border: 2px solid #F97316;">
+           <span class="text-white/30 text-sm">Project 2 Media Placeholder</span>
+         </div>
+       </div>
+     </div>
+
    </section>
 
    <div class="w-full px-6 md:px-16 py-6 text-center text-white/20 text-xs">
@@ -352,48 +132,21 @@
   </div>
 
   <script>
-  const defaultConfig = {
-    site_title: "Shah Adam Ludwig — Game Designer",
-    portrait_url: "https://via.placeholder.com/400x400?text=Your+Photo",
-    bio_text: "I’m a Game Designer dedicated to crafting immersive systems and combat experiences. With a deep technical foundation in Unity and C#, I transform design theories into playable reality. My approach focuses on mechanical depth and player feedback, ensuring that every level I build and every system I design feels responsive and impactful.",
-    contact_email: "adamludwig_GD@gmail.com",
-    project_1_title: "Turn Based RPG",
-    project_1_desc: "A dungeon crawler turn-based game implemented in Unity focusing on mechanical balance.",
-    project_2_title: "Puzzle Platformer",
-    project_2_desc: "A platformer where boomerangs shape the environment, built with custom C# physics logic.",
-    background_color: "#0B1D3A",
-    accent_color: "#F97316",
-    card_color: "#122750",
-    text_color: "#FFFFFF",
-    font_family: "Outfit",
-    font_size: 16
-  };
+    // Config for any potential script interactions
+    const defaultConfig = {
+      site_title: "Shah Adam Ludwig — Game Designer",
+      portrait_url: "https://via.placeholder.com/400x400?text=Your+Photo",
+      contact_email: "adamludwig_GD@gmail.com"
+    };
 
-  function applyConfig(config) {
-    const g = (k) => config[k] || defaultConfig[k];
-    document.getElementById('el-title').textContent = g('site_title');
-    document.getElementById('el-portrait').src = g('portrait_url');
-    document.getElementById('el-bio').textContent = g('bio_text');
-    document.getElementById('el-email').textContent = g('contact_email');
-    document.getElementById('el-p1-title').textContent = g('project_1_title');
-    document.getElementById('el-p1-desc').textContent = g('project_1_desc');
-    document.getElementById('el-p2-title').textContent = g('project_2_title');
-    document.getElementById('el-p2-desc').textContent = g('project_2_desc');
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => {
+        if(config.portrait_url) document.getElementById('el-portrait').src = config.portrait_url;
+      },
+    });
 
-    const accent = g('accent_color');
-    const txt = g('text_color');
-    
-    document.querySelectorAll('[style*="color:#F97316"]').forEach(el => el.style.color = accent);
-    document.querySelectorAll('h1, h3, .text-white').forEach(el => el.style.color = txt);
-    document.querySelectorAll('.text-white\\/80').forEach(el => el.style.color = txt + '99');
-  }
-
-  window.elementSdk.init({
-    defaultConfig,
-    onConfigChange: async (config) => applyConfig(config),
-  });
-
-  lucide.createIcons();
+    lucide.createIcons();
   </script>
  </body>
 </html>
